@@ -1,9 +1,9 @@
 package com.cloudDemo.core.express;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.linlinjava.litemall.core.express.config.ExpressProperties;
-import org.linlinjava.litemall.core.express.dao.ExpressInfo;
-import org.linlinjava.litemall.core.util.HttpUtil;
+import com.cloudDemo.core.express.config.ExpressProperties;
+import com.cloudDemo.core.express.dao.ExpressInfo;
+import com.cloudDemo.core.util.HttpUtil;
 import org.springframework.util.Base64Utils;
 
 import java.net.URLEncoder;

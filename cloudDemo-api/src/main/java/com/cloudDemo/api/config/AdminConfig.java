@@ -1,6 +1,6 @@
 package com.cloudDemo.api.config;
 
-import org.linlinjava.litemall.admin.annotation.support.LoginAdminHandlerMethodArgumentResolver;
+import com.cloudDemo.api.annotation.support.LoginAdminHandlerMethodArgumentResolver;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

@@ -2,8 +2,8 @@ package com.cloudDemo.core.notify;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaTemplateMessage;
-import org.linlinjava.litemall.db.domain.LitemallUserFormid;
-import org.linlinjava.litemall.db.service.LitemallUserFormIdService;
+//import com.cloudDemo.db.domain.LitemallUserFormid;
+//import com.cloudDemo.db.service.LitemallUserFormIdService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ public class WxTemplateSender {
     @Autowired
     WxMaService wxMaService;
 
-    @Autowired
-    LitemallUserFormIdService formIdService;
+//    @Autowired
+//    LitemallUserFormIdService formIdService;
 
     /**
      * 发送微信消息(模板消息),不带跳转
@@ -43,26 +43,26 @@ public class WxTemplateSender {
     }
 
     private void sendMsg(String touser, String templatId, String[] parms, String page, String color, String emphasisKeyword) {
-        LitemallUserFormid userFormid = formIdService.queryByOpenId(touser);
-        if (userFormid == null)
-            return;
-
-
-        WxMaTemplateMessage msg = new WxMaTemplateMessage();
-        msg.setTemplateId(templatId);
-        msg.setToUser(touser);
-        msg.setFormId(userFormid.getFormid());
-        msg.setPage(page);
-        msg.setColor(color);
-        msg.setEmphasisKeyword(emphasisKeyword);
-        msg.setData(createMsgData(parms));
-
-        try {
-            wxMaService.getMsgService().sendTemplateMsg(msg);
-            formIdService.updateUserFormId(userFormid);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        LitemallUserFormid userFormid = formIdService.queryByOpenId(touser);
+//        if (userFormid == null)
+//            return;
+//
+//
+//        WxMaTemplateMessage msg = new WxMaTemplateMessage();
+//        msg.setTemplateId(templatId);
+//        msg.setToUser(touser);
+//        msg.setFormId(userFormid.getFormid());
+//        msg.setPage(page);
+//        msg.setColor(color);
+//        msg.setEmphasisKeyword(emphasisKeyword);
+//        msg.setData(createMsgData(parms));
+//
+//        try {
+//            wxMaService.getMsgService().sendTemplateMsg(msg);
+//            formIdService.updateUserFormId(userFormid);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     private List<WxMaTemplateMessage.Data> createMsgData(String[] parms) {

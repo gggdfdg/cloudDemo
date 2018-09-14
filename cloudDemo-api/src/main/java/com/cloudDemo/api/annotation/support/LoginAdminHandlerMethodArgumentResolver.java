@@ -1,7 +1,7 @@
 package com.cloudDemo.api.annotation.support;
 
-import org.linlinjava.litemall.admin.annotation.LoginAdmin;
-import org.linlinjava.litemall.admin.service.AdminTokenManager;
+import com.cloudDemo.api.annotation.LoginAdmin;
+import com.cloudDemo.api.service.AdminTokenManager;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;

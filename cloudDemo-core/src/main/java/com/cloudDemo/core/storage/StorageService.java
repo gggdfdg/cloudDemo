@@ -1,8 +1,8 @@
 package com.cloudDemo.core.storage;
 
-import org.linlinjava.litemall.core.util.CharUtil;
-import org.linlinjava.litemall.db.domain.LitemallStorage;
-import org.linlinjava.litemall.db.service.LitemallStorageService;
+import com.cloudDemo.core.util.CharUtil;
+//import com.cloudDemo.db.domain.LitemallStorage;
+//import com.cloudDemo.db.service.LitemallStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 
@@ -17,8 +17,8 @@ import java.util.stream.Stream;
 public class StorageService {
     private String active;
     private Storage storage;
-    @Autowired
-    private LitemallStorageService litemallStorageService;
+//    @Autowired
+//    private LitemallStorageService litemallStorageService;
 
     public String getActive() {
         return active;
@@ -45,37 +45,39 @@ public class StorageService {
      * @param fileName      文件索引名
      */
     public String store(InputStream inputStream, long contentLength, String contentType, String fileName) {
-        String key = generateKey(fileName);
-        storage.store(inputStream, contentLength, contentType, key);
-
-        String url = generateUrl(key);
-        LitemallStorage storageInfo = new LitemallStorage();
-        storageInfo.setName(fileName);
-        storageInfo.setSize((int) contentLength);
-        storageInfo.setType(contentType);
-        storageInfo.setAddTime(LocalDateTime.now());
-        storageInfo.setModified(LocalDateTime.now());
-        storageInfo.setKey(key);
-        storageInfo.setUrl(url);
-        litemallStorageService.add(storageInfo);
-
-        return url;
+//        String key = generateKey(fileName);
+//        storage.store(inputStream, contentLength, contentType, key);
+//
+//        String url = generateUrl(key);
+//        LitemallStorage storageInfo = new LitemallStorage();
+//        storageInfo.setName(fileName);
+//        storageInfo.setSize((int) contentLength);
+//        storageInfo.setType(contentType);
+//        storageInfo.setAddTime(LocalDateTime.now());
+//        storageInfo.setModified(LocalDateTime.now());
+//        storageInfo.setKey(key);
+//        storageInfo.setUrl(url);
+//        litemallStorageService.add(storageInfo);
+//
+//        return url;
+        return null;
     }
 
     private String generateKey(String originalFilename) {
-        int index = originalFilename.lastIndexOf('.');
-        String suffix = originalFilename.substring(index);
-
-        String key = null;
-        LitemallStorage storageInfo = null;
-
-        do {
-            key = CharUtil.getRandomString(20) + suffix;
-            storageInfo = litemallStorageService.findByKey(key);
-        }
-        while (storageInfo != null);
-
-        return key;
+//        int index = originalFilename.lastIndexOf('.');
+//        String suffix = originalFilename.substring(index);
+//
+//        String key = null;
+//        LitemallStorage storageInfo = null;
+//
+//        do {
+//            key = CharUtil.getRandomString(20) + suffix;
+//            storageInfo = litemallStorageService.findByKey(key);
+//        }
+//        while (storageInfo != null);
+//
+//        return key;
+        return null;
     }
 
     public Stream<Path> loadAll() {

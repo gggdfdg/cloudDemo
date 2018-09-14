@@ -5,12 +5,14 @@ spring:
     encoding: UTF-8
 
 server:
-  port: 8083
+  port: 8080
 
 logging:
   level:
     root:  ERROR
     org.springframework:  ERROR
     org.mybatis:  ERROR
-    com.cloudDemo.api:  DEBUG
+    com.cloudDemo.core:  ERROR
+    com.cloudDemo.db:  ERROR
+    com.cloudDemo.api:  ERROR
     com.cloudDemo:  ERROR

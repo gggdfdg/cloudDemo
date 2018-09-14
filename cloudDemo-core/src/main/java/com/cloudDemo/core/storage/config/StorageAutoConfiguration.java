@@ -1,6 +1,6 @@
 package com.cloudDemo.core.storage.config;
 
-import org.linlinjava.litemall.core.storage.*;
+import com.cloudDemo.core.storage.*;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

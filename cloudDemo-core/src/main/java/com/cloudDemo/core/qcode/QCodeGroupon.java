@@ -1,7 +1,7 @@
 package com.cloudDemo.core.qcode;
 
-import org.linlinjava.litemall.core.system.SystemConfig;
-import org.linlinjava.litemall.db.domain.LitemallGroupon;
+import com.cloudDemo.core.system.SystemConfig;
+//import com.cloudDemo.db.domain.LitemallGroupon;
 import org.springframework.core.io.ClassPathResource;
 
 import javax.imageio.ImageIO;
@@ -18,18 +18,18 @@ public class QCodeGroupon extends QCodeBase {
         return null;
     }
 
-    public void createGrouponShareImage(String goodName, String goodPicUrl, LitemallGroupon groupon) {
-        try {
-            BufferedImage qrCodeImage = getQCode("groupon," + groupon.getId(), "pages/index/index");
-            //将商品图片，商品名字,商城名字画到模版图中
-            byte[] imageData = drawPicture(qrCodeImage, goodPicUrl, goodName, SystemConfig.getMallName());
-            saveImage(groupon.getId().toString(), imageData);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void createGrouponShareImage(String goodName, String goodPicUrl, LitemallGroupon groupon) {
+//        try {
+//            BufferedImage qrCodeImage = getQCode("groupon," + groupon.getId(), "pages/index/index");
+//            //将商品图片，商品名字,商城名字画到模版图中
+//            byte[] imageData = drawPicture(qrCodeImage, goodPicUrl, goodName, SystemConfig.getMallName());
+//            saveImage(groupon.getId().toString(), imageData);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * 将商品图片，商品名字画到模版图中

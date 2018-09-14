@@ -2,7 +2,7 @@ package com.cloudDemo.core.qcode;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import me.chanjar.weixin.common.error.WxErrorException;
-import org.linlinjava.litemall.core.storage.StorageService;
+import com.cloudDemo.core.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.imageio.ImageIO;

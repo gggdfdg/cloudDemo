@@ -1,11 +1,11 @@
 package com.cloudDemo.core.system;
 
-import org.linlinjava.litemall.core.util.SystemInfoPrinter;
+import com.cloudDemo.core.util.SystemInfoPrinter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -18,16 +18,16 @@ class SystemInistService {
     @Autowired
     private Environment environment;
 
-    @PostConstruct
-    private void inist() {
-        systemInistService = this;
-
-        try {
-            SystemInfoPrinter.printInfo("Litemall 初始化信息", getSystemInfo());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    @PostConstruct
+//    private void inist() {
+//        systemInistService = this;
+//
+//        try {
+//            SystemInfoPrinter.printInfo("Litemall 初始化信息", getSystemInfo());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private Map<String, String> getSystemInfo() {
 
@@ -38,7 +38,7 @@ class SystemInistService {
         infos.put("服务器端口", environment.getProperty("server.port"));
         infos.put("数据库USER", environment.getProperty("spring.datasource.druid.username"));
         infos.put("数据库地址", environment.getProperty("spring.datasource.druid.url"));
-        infos.put("调试级别", environment.getProperty("logging.level.org.linlinjava.litemall.wx"));
+        infos.put("调试级别", environment.getProperty("logging.level.com.cloudDemo.wx"));
 
         // 测试获取application-core.yml配置信息
         infos.put(SystemInfoPrinter.CREATE_PART_COPPER + 1, "模块状态");

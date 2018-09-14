@@ -1,9 +1,9 @@
 package com.cloudDemo.core.notify.config;
 
 import com.github.qcloudsms.SmsSingleSender;
-import org.linlinjava.litemall.core.notify.NotifyService;
-import org.linlinjava.litemall.core.notify.TencentSmsSender;
-import org.linlinjava.litemall.core.notify.WxTemplateSender;
+import com.cloudDemo.core.notify.NotifyService;
+import com.cloudDemo.core.notify.TencentSmsSender;
+import com.cloudDemo.core.notify.WxTemplateSender;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

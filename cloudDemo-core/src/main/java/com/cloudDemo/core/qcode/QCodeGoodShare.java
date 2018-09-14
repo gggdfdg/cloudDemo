@@ -1,6 +1,6 @@
 package com.cloudDemo.core.qcode;
 
-import org.linlinjava.litemall.core.system.SystemConfig;
+import com.cloudDemo.core.system.SystemConfig;
 import org.springframework.core.io.ClassPathResource;
 
 import javax.imageio.ImageIO;

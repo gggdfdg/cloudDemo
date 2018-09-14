@@ -1,11 +1,11 @@
 package com.cloudDemo.core.system;
 
-import org.linlinjava.litemall.db.domain.LitemallSystem;
-import org.linlinjava.litemall.db.service.LitemallSystemConfigService;
+//import com.cloudDemo.db.domain.LitemallSystem;
+//import com.cloudDemo.db.service.LitemallSystemConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -19,19 +19,19 @@ class ConfigService {
         return systemConfigService;
     }
 
-    @Autowired
-    private LitemallSystemConfigService litemallSystemConfigService;
+//    @Autowired
+//    private LitemallSystemConfigService litemallSystemConfigService;
 
     //不允许实例化
     private ConfigService() {
 
     }
 
-    @PostConstruct
-    public void inist() {
-        systemConfigService = this;
-        systemConfigService.inistConfigs();
-    }
+//    @PostConstruct
+//    public void inist() {
+//        systemConfigService = this;
+//        systemConfigService.inistConfigs();
+//    }
 
     /**
      * 根据 prefix 重置该 prefix 下所有设置
@@ -39,21 +39,21 @@ class ConfigService {
      * @param prefix
      */
     public void reloadConfig(String prefix) {
-        List<LitemallSystem> list = litemallSystemConfigService.queryAll();
-        for (LitemallSystem item : list) {
-            //符合条件，添加
-            if (item.getKeyName().startsWith(prefix))
-                BaseConfig.addConfig(item.getKeyName(), item.getKeyValue());
-        }
+//        List<LitemallSystem> list = litemallSystemConfigService.queryAll();
+//        for (LitemallSystem item : list) {
+//            //符合条件，添加
+//            if (item.getKeyName().startsWith(prefix))
+//                BaseConfig.addConfig(item.getKeyName(), item.getKeyValue());
+//        }
     }
 
     /**
      * 读取全部配置
      */
     private void inistConfigs() {
-        List<LitemallSystem> list = litemallSystemConfigService.queryAll();
-        for (LitemallSystem item : list) {
-            BaseConfig.addConfig(item.getKeyName(), item.getKeyValue());
-        }
+//        List<LitemallSystem> list = litemallSystemConfigService.queryAll();
+//        for (LitemallSystem item : list) {
+//            BaseConfig.addConfig(item.getKeyName(), item.getKeyValue());
+//        }
     }
 }
