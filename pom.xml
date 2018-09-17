@@ -9,20 +9,26 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>cloudDemo-core</module>
         <module>cloudDemo-db</module>
         <module>cloudDemo-api</module>
-        <module>cloudDemo-core</module>
         <module>cloudDemo-all</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.10</java.version>
+        <java.version>1.8</java.version>
         <maven.test.skip>true</maven.test.skip>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.cloudDemo</groupId>
+                <artifactId>cloudDemo-db</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.cloudDemo</groupId>
                 <artifactId>cloudDemo-core</artifactId>
@@ -36,12 +42,6 @@
             <dependency>
                 <groupId>com.cloudDemo</groupId>
                 <artifactId>cloudDemo-all</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.cloudDemo</groupId>
-                <artifactId>cloudDemo-db</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
