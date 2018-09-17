@@ -60,5 +60,10 @@
             <columnOverride javaType="java.time.LocalDateTime" column="start_time"/>
             <columnOverride javaType="java.time.LocalDateTime" column="end_time"/>
         </table>
+        <table tableName="admin">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride javaType="java.time.LocalDateTime" column="last_login_time"/>
+            <columnOverride javaType="java.time.LocalDateTime" column="add_time"/>
+        </table>
     </context>
 </generatorConfiguration>
