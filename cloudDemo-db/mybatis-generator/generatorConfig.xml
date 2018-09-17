@@ -56,11 +56,9 @@
                              targetProject="src/main/java"/>
         <!--表名-->
         <table tableName="Ad">
-            <property name="versionColumn" value="version"/>
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride javaType="java.time.LocalDateTime" column="start_time"/>
             <columnOverride javaType="java.time.LocalDateTime" column="end_time"/>
-            <columnOverride javaType="java.time.LocalDateTime" column="add_time"/>
         </table>
     </context>
 </generatorConfiguration>

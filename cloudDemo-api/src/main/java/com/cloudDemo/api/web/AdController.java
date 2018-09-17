@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/admin/ad")
 @Validated
-public class AdminAdController {
-    private final Log logger = LogFactory.getLog(AdminAdController.class);
+public class AdController {
+    private final Log logger = LogFactory.getLog(AdController.class);
 
     @Autowired
     private AdService adService;
 
+    /**
+     * 增加
+     * @param ad
+     * @return
+     */
     @PostMapping("/create")
     public Object create(@RequestBody Ad ad){
         adService.add(ad);
